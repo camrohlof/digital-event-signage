@@ -1,0 +1,25 @@
+{% load static %}
+
+<h1>Welcome to Stardust!</h1>
+<h2>Today's events:</h2>
+
+<meta http-equiv="Refresh" content="300">
+
+<body>
+
+<div id="vents">	
+<div class="row">
+	<div class="column">
+		{% if current_events %}
+		<ul>
+			{% for event in current_events %}
+				<div class="event">{{ event.name}}</div>	
+			{% endfor %}
+		</ul>
+		{% else %}
+			<div> </div>
+		{% endif %}
+	</div>
+</div>
+
+</body>
