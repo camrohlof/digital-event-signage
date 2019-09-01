@@ -1,1 +1,1 @@
-web: gunicorn displays.wsgi --log-file -
+web: gunicorn stardustApp.wsgi --log-file -
