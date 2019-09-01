@@ -6,19 +6,19 @@ class MainDisplayManager(models.Manager):
         return super().get_queryset().filter(eventType='normal').filter(eventType='kids bday')
 
 class Location(models.Model):
-    party_area = models.CharField(max_length=25)
+    party_area = models.CharField(max_length=20)
 
     def __str__(self):
        return self.party_area 
 
 class EventType(models.Model):
-    type_of_event = models.CharField(max_length=25)
+    type_of_event = models.CharField(max_length=20)
 
     def __str__(self):
         return self.type_of_event
 
 class Event(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=20)
     day = models.DateField()
     time = models.TimeField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)

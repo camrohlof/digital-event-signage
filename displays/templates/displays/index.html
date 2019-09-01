@@ -1,25 +1,36 @@
 {% load static %}
 
-<h1>Welcome to Stardust!</h1>
-<h2>Today's events:</h2>
+{% csrf_token %}
+<head>
+    
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<meta http-equiv="Refresh" content="300">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'displays/css/display.css' %}">
+  </head>
 
 <body>
+  <h1>Welcome to Stardust!</h1>
+  <div id="loadHere">
 
-<div id="vents">	
-<div class="row">
-	<div class="column">
-		{% if current_events %}
-		<ul>
-			{% for event in current_events %}
-				<div class="event">{{ event.name}}</div>	
-			{% endfor %}
-		</ul>
-		{% else %}
-			<div> </div>
-		{% endif %}
-	</div>
-</div>
-
+  </div>
+  <script>
+    $(document).ready(function(){
+        $("#loadHere").load("events.html");
+    });
+    $(document).ready(function(){
+      setInterval(function(){
+        $("#loadHere").load("events.html");
+      }, 20000);
+    });
+  </script>
+  
 </body>

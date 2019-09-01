@@ -1,0 +1,71 @@
+@font-face {
+	font-family: 'starburst';
+	src: url('/static/fonts/starburst.ttf') format("truetype"), 
+		local('starburst');
+	font-kerning: normal;
+}
+body {
+	background-image: url("/static/img/background2.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: rgb(171,34,38);
+	font-family: 'Open Sans', sans-serif;
+	color: White;
+	text-shadow: 3px 3px Black;
+}
+
+.column {
+	float: left;
+	width: 33.33%
+}
+
+#loadHere {
+	position: relative;
+	top: -25;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+body {
+	font-size: 3vw;
+}
+
+div, h1 {
+	text-align: center;
+}
+
+h1 {
+	position: relative;
+	top: -10;
+	font-size: 15vw;
+	margin: 0px;
+	font-family: starburst;
+	font-weight: normal;
+}
+
+#underline {
+	position: relative;
+	top: -15;
+	font-size: 4vw;
+	margin: 5px;
+	margin-top: 0px;
+	padding-bottom: 10px;
+	border-bottom-style: solid;
+}
+
+#noEvents {
+	position: relative;
+	margin-top: 60px;
+}
+
+#noEvents > h2{
+	font-size: 4vw;
+}
+
+.event {
+	padding-bottom: 10px;
+}
