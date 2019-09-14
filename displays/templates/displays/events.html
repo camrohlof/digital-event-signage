@@ -14,7 +14,7 @@
         <div class="col-4">
           <ul>
             {% for event in current_events %}
-            <div class="event">{{ event.time }}</div>
+            <div class="event">{{ event.dayTime|time }}</div>
             {% endfor %}
           </ul>
         </div>

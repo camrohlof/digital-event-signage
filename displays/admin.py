@@ -10,6 +10,6 @@ admin.site.register(EventType)
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    date_hierarchy = 'day'
-    list_display = ('name', 'day', 'time', 'location')
+    date_hierarchy = 'dayTime'
+    list_display = ('name', 'dayTime', 'location')
     search_fields = ['name']

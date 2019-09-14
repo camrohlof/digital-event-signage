@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class MainDisplayManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset().filter(eventType='normal').filter(eventType='kids bday')
+        return super().get_queryset().filter(eventType='normal')
 
 class Location(models.Model):
     party_area = models.CharField(max_length=20)
@@ -18,9 +18,8 @@ class EventType(models.Model):
         return self.type_of_event
 
 class Event(models.Model):
-    name = models.CharField(max_length=20)
-    day = models.DateField()
-    time = models.TimeField()
+    name = models.CharField(max_length=25)
+    dayTime = models.DateTimeField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     eventType = models.ForeignKey(EventType, on_delete=models.CASCADE)
 
